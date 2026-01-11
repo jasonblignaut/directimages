@@ -1,0 +1,57 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║            LFCS PLATFORM - QUICK START GUIDE                      ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+INSTALLATION (Run as root):
+
+1. Upload this folder to your server:
+   scp -r lfcs-platform-complete root@4.221.152.28:/root/
+
+2. SSH into server:
+   ssh root@4.221.152.28
+
+3. Navigate and run installer:
+   cd /root/lfcs-platform-complete/scripts
+   chmod +x lfcs-platform-installer.sh
+   ./lfcs-platform-installer.sh
+
+4. Wait 10-20 minutes for installation
+
+5. Access platform:
+   https://velocitylab.co.za
+   
+   Username: superadmin
+   Password: Superadmin@123
+
+MANAGEMENT COMMANDS:
+
+  lfcs-start      Start platform
+  lfcs-stop       Stop platform
+  lfcs-restart    Restart platform
+  lfcs-status     Check status
+  lfcs-logs       View logs
+  lfcs-backup     Backup database
+
+TROUBLESHOOTING:
+
+  If site not loading:
+  - Check: systemctl status nginx
+  - Check: systemctl status lfcs-platform
+  - Check: lfcs-logs
+
+  If database issues:
+  - Check: systemctl status postgresql
+  - Test: sudo -u postgres psql -l
+
+IMPORTANT:
+
+  ✓ Change admin password after first login
+  ✓ Ensure DNS points to 4.221.152.28
+  ✓ Backups run daily at 2 AM
+
+For detailed documentation, see docs/DEPLOYMENT.md
+
+═══════════════════════════════════════════════════════════════════
+Platform Version: 1.0 | Created: January 2026
